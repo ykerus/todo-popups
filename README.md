@@ -1,6 +1,6 @@
 # todo-popups
 
-I was supposed to write my thsesis, so I wasted valuable time writing this code that is supposed to help me write my thesis:
+I was supposed to write my thesis, so I wasted valuable time writing this code that is supposed to help me write my thesis:
 
 ```
 todos = [
