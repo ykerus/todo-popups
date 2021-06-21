@@ -12,17 +12,28 @@ todos = [
 from tkinter import *
 import tkinter.messagebox
 
-def message(msg):
-	root=Tk() 
-	root.geometry("1x0")
-	tkinter.messagebox.showinfo('To do',msg)
-	root.destroy()
+def message(title, msg):
+	try:
+		root=Tk() 
+		root.geometry("1x0")
+		tkinter.messagebox.showinfo(title, msg)
+		root.destroy()
+	except KeyboardInterrupt:
+		return 0
+	return 1
+		
 
 def iterate_todos(todos):
-	for todo in todos:
-		root = message(todo)
+	todos_left = [todo for todo in todos]
+	if len(todos):
+		for i, todo in enumerate(todos):
+			keep_em_coming = message(f"To do ({i+1}/{len(todos)})", todo)
+			if not keep_em_coming:
+				break
+			todos_left.remove(todo)
+	return todos_left, keep_em_coming
 
-iterate_todos(todos)
+todos, keep_em_coming = iterate_todos(todos)
 
 ```
 
