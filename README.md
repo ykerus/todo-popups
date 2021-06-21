@@ -26,4 +26,4 @@ iterate_todos(todos)
 
 ```
 
-So, open a terminal, enter `python`, copy-paste this piece of code and write a thesis!
+So, open a terminal, enter `python3`, copy-paste this piece of code and write a thesis!
