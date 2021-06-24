@@ -23,7 +23,7 @@ def message(title, msg):
 	return 1
 		
 
-def iterate_todos(todos):
+def do(todos):
 	todos_left = [todo for todo in todos]
 	if len(todos):
 		for i, todo in enumerate(todos):
@@ -31,9 +31,9 @@ def iterate_todos(todos):
 			if not keep_em_coming:
 				break
 			todos_left.remove(todo)
-	return todos_left, keep_em_coming
+	return todos_left
 
-todos, keep_em_coming = iterate_todos(todos)
+todos = do(todos)
 
 ```
 
