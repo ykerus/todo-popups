@@ -17,7 +17,12 @@ def message(title, msg):
 		root=Tk() 
 		root.geometry("1x0")
 		tkinter.messagebox.showinfo(title, msg)
-		root.destroy()
+		destroyed = False
+		while not destroyed:
+			try:
+				root.destroy()
+			except tkinter.TclError:
+				destroyed = True
 	except KeyboardInterrupt:
 		return 0
 	return 1
