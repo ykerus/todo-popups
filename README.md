@@ -35,7 +35,11 @@ def do(todos):
 	todos_left = [todo for todo in todos]
 	skipped = [False for todo in todos]
 	while len(todos_left) > 0:
-		user_response = message(f"To do ({i+1}/{tot_todos})", todos[i])
+		pbar = 20
+		msg_title = f"To do  ["
+		msg_title += "=" * round((i+1)/tot_todos * pbar)
+		msg_title += "  " * (pbar-round((i+1)/tot_todos * pbar))
+		user_response = message(msg_title + f"]  {i+1}/{tot_todos}", todos[i])
 		if user_response == -1:
 			break
 		elif user_response == 0:
@@ -62,6 +66,7 @@ def do(todos):
 			todos_left.remove(todos[i])
 			i += 1
 	return todos
+
 
 todos = do(todos)
 
