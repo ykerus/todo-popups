@@ -72,4 +72,4 @@ todos = do(todos)
 
 ```
 
-So, open a terminal, enter `python3`, copy-paste this piece of code and write a thesis!
+So, open a terminal, enter `python3`, copy-paste this piece of code and write a thesis! Sometimes copy-pasting fails, then it's easier to just put this in a `.py` file and run it by `python3 [filename].py`.
